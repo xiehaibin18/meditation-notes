@@ -1,17 +1,29 @@
 <template>
   <div id="home">
-    
+    <swiper>
+    <swiper-item v-for="item in banners">
+      <a :href="item.link">
+        <img :src="item.image" alt="">
+      </a>
+    </swiper-item>
+  </swiper>
   </div>
 </template>
 
 <script>
 import { getHomeAds } from "network/home"
+import {Swiper, SwiperItem} from 'components/swiper'
 
 export default {
   name: 'home',
   data() {
     return {
-      banners: []
+      banners: {
+        type: Array,
+        default() {
+          return []
+        }
+      }
     }
   },
   methods: {
@@ -24,6 +36,10 @@ export default {
   },
   created() {
     this.getHomeAds()
+  },
+  components: {
+    Swiper,
+    SwiperItem
   }
 }
 </script>
