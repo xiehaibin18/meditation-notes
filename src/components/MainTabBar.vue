@@ -11,17 +11,6 @@
             <div>Home</div>
           </template>
       </tab-bar-item>
-      <tab-bar-item path='/about' activeColor='#ee8033'>
-          <template v-slot:item-icon>
-            <img src="~assets/img/tabbar/about_deactive.svg" alt />
-          </template>
-          <template v-slot:item-icon-active>
-            <img src="~assets/img/tabbar/about_active.svg" alt />
-          </template>
-          <template v-slot:item-text>
-            <div>About</div>
-          </template>
-      </tab-bar-item>
       <tab-bar-item path='/clock' activeColor='#ee8033'>
           <template v-slot:item-icon>
             <img src="~assets/img/tabbar/clock_deactive.svg" alt />
@@ -31,6 +20,17 @@
           </template>
           <template v-slot:item-text>
             <div>Clock</div>
+          </template>
+      </tab-bar-item>
+      <tab-bar-item path='/about' activeColor='#ee8033'>
+          <template v-slot:item-icon>
+            <img src="~assets/img/tabbar/about_deactive.svg" alt />
+          </template>
+          <template v-slot:item-icon-active>
+            <img src="~assets/img/tabbar/about_active.svg" alt />
+          </template>
+          <template v-slot:item-text>
+            <div>About</div>
           </template>
       </tab-bar-item>
     </tab-bar>

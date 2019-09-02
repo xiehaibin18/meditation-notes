@@ -7,9 +7,10 @@ module.exports = {
     'resolve-alias': {
       alias: {
         '@': resolve('src'),
-        'assets': resolve('@/assets'),
-        'components': resolve('@/components'),
-        'views': resolve('@/views'),
+        'assets': resolve('src/assets'),
+        'components': resolve('src/components'),
+        'views': resolve('src/views'),
+        'network': resolve('src/network'),
       }
     }
   }
