@@ -2,6 +2,7 @@
   <div id="clock">
     <div id="clockbtn">
       <div id="clocktext">
+        <div v-show="!isShow">{{ $store.state.name }}您好</div>
         <div v-show="isShow">{{ time }}</div>
       </div>
       <button @click="clockbtn" :disabled="isBegin">10 min</button>
@@ -44,6 +45,12 @@ export default {
         }, 1000);
       }
     }
+  },
+  created() {
+    if(localStorage.getItem('name') != null){
+      this.$store.commit('setname', localStorage.getItem('name'))
+      this.isShowSub = false
+    }
   }
 };
 </script>
@@ -69,6 +76,9 @@ export default {
   background-color: #ee8033;
   font-size: 20px;
   color: white;
+}
+#clockbtn button:disabled{
+  background-color: #87CEFA;
 }
 #clocktext {
   margin: 0;
